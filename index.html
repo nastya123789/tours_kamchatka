@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шапка сайта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/ЛОГО.png" alt="Логотип компании">
+                    </a>
+                </div>
+
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="всетуры.html" class="nav-button">ТУРЫ</a>
+                    <a href="команда.html" class="nav-button">КОМАНДА</a>
+                    <a href="Информация.html" class="nav-button">КОНТАКТЫ</a>
+                    <a href="ОТЗЫВЫ.html" class="nav-button">ОТЗЫВЫ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="video-block">
+        <video autoplay muted loop playsinline poster="videos/preview.jpg">  // playsinline для моб устройств 
+          <source src="videos/видеокамчатка.mp4" type="video/mp4">
+        </video>
+      </section>
+
+
+
+    <section class="welcome-section">
+        <div class="container">
+            <div class="welcome-content">
+                <img src="images/Малый Семячик, Камчатка 1.png" alt="Камчатка" class="welcome-image">
+                <div class="welcome-card">
+                    <h1>Добро пожаловать!</h1>
+                    <p>Камчатка перевернет ваш мир с ног на голову. Среди огромных пространств, где правит природа, тут же вылетают из головы проекты и дедлайны. А на их месте остается только один вопрос: "Неужели это все происходит со мной?" И правда, где еще вы окажетесь на гейзерном поле, понежитесь в горячем источнике с видом на вулкан и скатитесь на лыжах к Тихому океану?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="experience-section">
+        <div class="container">
+            <div class="experience-content">
+                <img src="images/Авачинская бухта, скалы Три брата и Вилючинский вулкан 1.png" alt="Вулканы Камчатки" class="experience-image">
+                <div class="experience-card">
+                    <p>Если Вы хотите получить уникальный опыт с максимальной дозой ярких впечатлений, а также готовы отправиться в уникальное путешествие в сердце дикой природы с величественными вулканическими пейзажами, то отправляйтесь в путешествие именно с нами!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/лого 2.png" alt="Логотип">
+                    </a>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h3 class="contacts-title">8-911-962-93-52<br>8-911-964-93-57</h3>
+                    <p class="contacts-subtitle">Россия, 190068, г. Санкт-Петербург,<br>Вознесенский пр-т 44-46</p>
+                </div>
+                
+                <nav class="footer-nav">
+                    <a href="всетуры.html" class="footer-nav-link">ТУРЫ</a>
+                    <a href="ОТЗЫВЫ.html" class="footer-nav-link">ОТЗЫВЫ</a>
+                    <a href="команда.html" class="footer-nav-link">КОМАНДА</a>
+                    <a href="Информация.html" class="footer-nav-link">КОНТАКТЫ</a>
+                </nav>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><img src="images/tg.png" alt="Telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
+                    <a href="#" class="social-icon"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const navMenu = document.querySelector('.nav-menu');
+    
+            burger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+    
+            // Закрывать меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav-button');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    burger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

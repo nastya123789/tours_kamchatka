@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семейный отдых</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="фио.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/ЛОГО.png" alt="Логотип компании">
+                    </a>
+                </div>
+
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="всетуры.html" class="nav-button">ТУРЫ</a>
+                    <a href="команда.html" class="nav-button">КОМАНДА</a>
+                    <a href="ОТЗЫВЫ.html" class="nav-button">ОТЗЫВЫ</a>
+                    <a href="Информация.html" class="nav-button">КОНТАКТЫ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="booking-section">
+        <div class="bg-overlay"></div> <!-- Новый элемент для фона -->
+        <a href="javascript:history.back()" class="back-button">×</a> <!-- Добавленная строка -->
+        <div class="container">
+            <div class="booking-content">
+                <h2 class="booking-title">Забронируйте ваше приключение уже сегодня и откройте для себя магию Камчатки!</h2>
+                
+                <form class="booking-form" action="всетуры.html" method="get">
+                    <div class="form-group">
+                        <label for="name">Ваше Имя</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Ваш телефон</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Ваш Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Комментарии</label>
+                        <textarea id="comments" name="comments" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-agreement">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <label for="agreement">Я даю согласие на обработку моих <a href="Политика.html" target="_blank" style="color: #00304E; text-decoration: underline;">    
+                        персональных данных
+                    </a> 
+                    </label>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Оставить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                    <img src="images/лого 2.png" alt="Логотип">
+                </a>
+                </div>
+                <div class="footer-contacts">
+                    <h3 class="contacts-title">8-911-962-93-52<br>8-911-964-93-57</h3>
+                    <p class="contacts-subtitle">Россия, 190068, г. Санкт-Петербург,<br>Вознесенский пр-т 44-46</p>
+                </div>
+                <nav class="footer-nav">
+                    <a href="всетуры.html" class="footer-nav-link">ТУРЫ</a>
+                    <a href="ОТЗЫВЫ.html" class="footer-nav-link">ОТЗЫВЫ</a>
+                    <a href="команда.html" class="footer-nav-link">КОМАНДА</a>
+                    <a href="Информация.html" class="footer-nav-link">КОНТАКТЫ</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><img src="images/tg.png" alt="Telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
+                    <a href="#" class="social-icon"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const navMenu = document.querySelector('.nav-menu');
+    
+            burger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+    
+            // Закрывать меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav-button');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    burger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

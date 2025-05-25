@@ -1,0 +1,213 @@
+/* Основные стили для страницы политики */
+.policy-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #CACACA;
+    border-radius: 10px;
+}
+
+.policy-title {
+    color: #00304E;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.policy-text {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.policy-section {
+    margin-bottom: 25px;
+}
+
+.policy-section-title {
+    color: #00304E;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/* Стили для ссылки в форме согласия (добавить в фио.css) */
+.policy-link {
+    color: #00304E;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.policy-link:hover {
+    color: #001a2e;
+    text-decoration: none;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .policy-container {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .policy-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-agreement label {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .policy-container {
+        margin: 15px;
+        padding: 15px;
+    }
+    
+    .policy-title {
+        font-size: 22px;
+    }
+    
+    .policy-section-title {
+        font-size: 18px;
+    }
+    
+    .policy-text {
+        font-size: 15px;
+    }
+}
+
+.policy-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 48, 78, 0.1);
+}
+
+.policy-main-title {
+    color: #00304E;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.policy-intro {
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.policy-section {
+    margin-bottom: 35px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 25px;
+}
+
+.policy-section:last-child {
+    border-bottom: none;
+}
+
+.policy-section-title {
+    color: #00304E;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 22px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.policy-section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5px;
+    height: 20px;
+    width: 5px;
+    background-color: #00304E;
+}
+
+.policy-text-block {
+    color: #333;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.policy-text-block p {
+    margin-bottom: 15px;
+}
+
+.policy-list {
+    margin: 15px 0 15px 30px;
+    list-style-type: disc;
+    color: #00304E;
+}
+
+.policy-list li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+}
+
+/* Адаптация для планшетов */
+@media (max-width: 768px) {
+    .policy-container {
+        margin: 30px 20px;
+        padding: 25px;
+    }
+    
+    .policy-main-title {
+        font-size: 28px;
+    }
+    
+    .policy-section-title {
+        font-size: 20px;
+    }
+    
+    .policy-text-block {
+        font-size: 15px;
+    }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+    .policy-container {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+    
+    .policy-main-title {
+        font-size: 24px;
+    }
+    
+    .policy-section-title {
+        font-size: 18px;
+    }
+    
+    .policy-list {
+        margin-left: 20px;
+    }
+    
+    .policy-text-block {
+        font-size: 14px;
+    }
+}
+
+/* Стили для ссылки в форме согласия */
+.form-agreement a {
+    color: #00304E;
+    text-decoration: underline;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+.form-agreement a:hover {
+    color: #001a2e;
+    text-decoration: none;
+}

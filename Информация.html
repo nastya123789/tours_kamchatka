@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИНФОРМАЦИЯ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesИНФА.css">
+    <style>
+        #map {
+            width: 50%;
+            height: 500px;
+            margin-left: 64px;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">
+                       <img src="images/ЛОГО.png" alt="Логотип компании">
+                    </a>
+                </div>
+
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="всетуры.html" class="nav-button">ТУРЫ</a>
+                    <a href="команда.html" class="nav-button">КОМАНДА</a>
+                    <a href="ОТЗЫВЫ.html" class="nav-button">ОТЗЫВЫ</a>
+                    <a href="Информация.html" class="nav-button">КОНТАКТЫ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="contacts-section">
+        <div class="container">
+            <div class="contacts-content">
+                <div id="map"></div>
+                <div class="contacts-card">
+                    <h2>Контакты</h2>
+                    <p><strong>Телефоны:</strong><br>
+                    8-911-964-93-57 (основной)<br>
+                    8-911-962-93-52</p>
+                    <p><strong>Электронная почта:</strong><br>
+                    kamchatka_worldwild@yandex.ru</p>
+                    <p><strong>Адрес:</strong><br>
+                    Россия, 190068, г. Санкт-Петербург,<br>
+                    Вознесенский пр-т 44-46</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <div class="info-content">
+                <div class="info-card left-card">
+                    <p><strong>Турагенство</strong></p>
+                    <p>ИП Попутян А.А.</p>
+                    <p>ОГРН 317410100017802</p>
+                    <p>ИНН 892546787655</p>
+                </div>
+                <div class="info-card right-card">
+                    <p><strong>Туроператор ООО "Гранд"</strong></p>
+                    <p>ОГРН 1084101102468</p>
+                    <p>ИНН 4101123817</p>
+                    <p>РТО 009856</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="full-width-image-section">
+        <img src="images/людиИНФА.png" alt="Описание картинки" class="full-width-image">
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                       <img src="images/лого 2.png" alt="Логотип">
+                    </a>
+                </div>
+                
+                <div class="footer-contacts">
+                    <h3 class="contacts-title">8-911-962-93-52<br>8-911-964-93-57</h3>
+                    <p class="contacts-subtitle">Россия, 190068, г. Санкт-Петербург,<br>Вознесенский пр-т 44-46</p>
+                </div>
+                
+                <nav class="footer-nav">
+                    <a href="всетуры.html" class="footer-nav-link">ТУРЫ</a>
+                    <a href="ОТЗЫВЫ.html" class="footer-nav-link">ОТЗЫВЫ</a>
+                    <a href="команда.html" class="footer-nav-link">КОМАНДА</a>
+                    <a href="Информация.html" class="footer-nav-link">КОНТАКТЫ</a>
+                </nav>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><img src="images/tg.png" alt="Telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
+                    <a href="#" class="social-icon"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=c8cf15d2-bddb-4088-8845-6e9989422285&lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [59.920, 30.300],
+                zoom: 16
+            });
+            
+            ymaps.geocode("Россия, 190068, г. Санкт-Петербург, Вознесенский пр-т 44-46", {
+                results: 1
+            }).then(function (res) {
+                var firstGeoObject = res.geoObjects.get(0),
+                    coords = firstGeoObject.geometry.getCoordinates(),
+                    bounds = firstGeoObject.properties.get('boundedBy');
+                
+                var myPlacemark = new ymaps.Placemark(coords, {
+                    hintContent: 'Наш офис',
+                    balloonContent: 'Турагентство ИП Попутян А.А.'
+                }, {
+                    preset: 'islands#blueDotIcon'
+                });
+                
+                myMap.geoObjects.add(myPlacemark);
+                myMap.setBounds(bounds, {
+                    checkZoomRange: true
+                });
+            });
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const burger = document.querySelector('.burger');
+            const navMenu = document.querySelector('.nav-menu');
+    
+            burger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+    
+            // Закрывать меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav-button');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    burger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

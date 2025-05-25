@@ -1,0 +1,649 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inria Serif', serif;
+    background-color: #CACACA;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+
+}
+
+.logo img {
+    width: 217x;
+    height: 58px;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    
+    gap: 80px;
+    
+}
+
+.nav-button {
+    color: #00304E;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    transition: color 0.3s ease;    
+}
+
+.nav-button:hover {
+    color:  #CACACA;
+    background-color: #00304E;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #00304E; 
+}
+/* Основной контент */
+.main-container {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    padding: 50px 180px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.photo-container {
+    width: 550px;
+    z-index: 1;
+}
+
+.photo-container img {
+    width: 100%;
+    height: auto;
+    display:flex;
+    border-radius: 10px;
+   
+}
+
+.text-block {
+    width: calc(100% - 600px );
+    right: 40px;
+    top: 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items:end;
+    margin-left: 0;
+}
+
+.text-content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 72px;
+    font-weight: bold;
+    color: #00304E;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    text-align: left;
+    width: auto;
+    white-space: nowrap;
+    margin-left: -200px;
+    margin-top: 30px;
+}
+
+.comfort-text-block {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    padding: 40px 0;   
+  
+}
+
+.description {
+    font-size: 23px;
+    font-weight: bold;
+    color: #00304E;
+    margin-bottom: 30px;
+    line-height: 1.1;
+   
+}
+
+.details-container {
+    display: flex;
+    gap: 40px;
+}
+
+.details-column {
+    flex: 1;
+    font-size: 23px;
+    font-weight: 700;
+    color: #00304E;
+    line-height: 1.1;
+    font-weight: bold;
+    
+}
+/* Стили для секции с каруселью */
+.carousel-section {
+    padding: 40px 0;
+    width: 100%;
+    margin-top: -40px;
+
+}
+.carousel-section .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 180px;
+}
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease;
+ 
+}
+
+.carousel-slide {
+    flex: 0 0 calc(20% - 24px); /* 5 видимых слайдов с учетом отступов */
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #00304E;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.carousel-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* кнопка забронировать*/
+.book-button {
+    display: inline-block;
+    background-color: #00304E;
+    color: #CACACA;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 32px;
+}
+
+.book-button:hover {
+    background-color: #004b7c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-button:active {
+    transform: translateY(0);
+}
+
+/* Футер */
+.footer {
+    background-color: #00304E;
+    padding: 60px 0;
+    width: 100%; /* Добавляем */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 65px;
+}
+
+.footer-logo img {
+    width: 243px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.footer-contacts {
+    width: 287px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CACACA;
+    margin-bottom: 17px;
+}
+
+.contacts-subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: #CACACA;
+}
+
+.footer-nav {
+    width: 425px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 60px;
+}
+
+.footer-nav-link {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CACACA;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-social {
+    width: 223px;
+    display: flex;
+    gap: 41px;
+}
+
+.social-icon img {
+    width: 47px;
+    height: 47px;
+}
+
+/* Скрываем навигацию и показываем бургер на экранах ≤ 1055px */
+@media (max-width: 1055px) {
+    .header-container {
+        padding: 25px 20px;
+        position: relative;
+    }
+
+    .logo img {
+        width: 180px;
+        height: auto;
+    }
+
+    .nav-menu {
+        display: none; /* Скрываем обычное меню */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #00304E;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 100;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        right: 0;
+        display: flex; /* Показываем при активации */
+    }
+
+    .nav-button {
+        font-size: 20px;
+        color: #CACACA;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-button:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    /* Стили бургера */
+    .burger {
+        display: block; /* Показываем бургер */
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 101;
+        cursor: pointer;
+    }
+
+    .burger span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #00304E;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .burger span:nth-child(1) {
+        top: 0;
+    }
+
+    .burger span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger span:nth-child(3) {
+        bottom: 0;
+    }
+
+    .burger.active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        background: #CACACA;
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+        background: #CACACA;
+    }
+}
+
+/* Скрываем бургер на экранах ≥ 1056px */
+@media (min-width: 1056px) {
+    .burger {
+        display: none !important;
+    }
+
+    .nav-menu {
+        display: flex !important; /* Всегда показываем обычное меню */
+    }
+}
+
+/* Адаптация ФУТЕР для экранов ≤ 1055px */
+@media (max-width: 1220px) {
+    .footer {
+        padding: 40px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .footer-logo,
+    .footer-contacts,
+    .footer-nav,
+    .footer-social {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        order: 1;
+    }
+    
+    .footer-nav {
+        order: 2;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-contacts {
+        order: 3;
+    }
+    
+    .footer-social {
+        order: 4;
+        justify-content: center;
+    }
+    
+    .contacts-title,
+    .contacts-subtitle {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .footer-nav-link {
+        font-size: 20px;
+        white-space: normal;
+    }
+}
+
+/* ТЕЛЕФОНЫ Дополнительная адаптация для очень маленьких экранов ≤ 480px */
+@media (max-width: 480px) {
+    /* Адаптация хедера */
+.header-container {
+    padding: 15px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Адаптация бургер-меню */
+.burger {
+    width: 25px;
+    height: 18px;
+}
+
+.burger span {
+    height: 2px;
+}
+
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-logo img {
+        width: 200px;
+        height: auto;
+    }
+    
+    .footer-nav-link {
+        font-size: 18px;
+    }
+    
+    .social-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Добавьте эти медиазапросы в конец файла */
+
+/* Адаптация для экранов ≤ 1200px */
+@media (max-width: 1200px) {
+    .main-container {
+        padding: 50px 100px;
+    }
+    
+    .carousel-section .container {
+        padding: 0 100px;
+    }
+    
+    .title {
+        font-size: 60px;
+        margin-left: -150px;
+    }
+}
+
+/* Адаптация для экранов ≤ 992px */
+@media (max-width: 1230px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 40px;
+    }
+    
+    .photo-container {
+        width: 100%;
+        max-width: 600px;
+        margin-bottom: 30px;
+    }
+    
+    .text-block {
+        width: 100%;
+        align-items: center;
+    }
+    
+    .text-content-container {
+        align-items: center;
+    }
+    
+    .title {
+        margin-left: 0;
+        text-align: center;
+        font-size: 50px;
+        white-space: normal;
+    }
+    
+    .description {
+        text-align: center;
+    }
+    
+    .carousel-section .container {
+        padding: 0 40px;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 calc(33.333% - 20px); /* 3 слайда в ряд */
+    }
+}
+
+/* Адаптация для экранов ≤ 768px */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 30px 20px;
+    }
+    
+    .title {
+        font-size: 42px;
+    }
+    
+    .description {
+        font-size: 20px;
+    }
+    
+    .details-column {
+        font-size: 20px;
+    }
+    
+    .carousel-section .container {
+        padding: 0 20px;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 calc(50% - 15px); /* 2 слайда в ряд */
+    }
+    
+    .carousel-slide img {
+        height: 200px;
+    }
+}
+
+/* Адаптация для экранов ≤ 480px */
+@media (max-width: 480px) {
+    .title {
+        font-size: 36px;
+    }
+    
+    .description {
+        font-size: 18px;
+    }
+    
+    .details-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .details-column {
+        text-align: center;
+    }
+    
+    .book-button {
+        margin-top: 15px;
+    }
+    
+    .carousel-slide {
+        flex: 0 0 100%; /* 1 слайд в ряд */
+    }
+    
+    .carousel-slide img {
+        height: 180px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+}

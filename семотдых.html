@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семейный отдых</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="семотдых.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/ЛОГО.png" alt="Логотип компании">
+                    </a>
+                </div>
+                
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="nav-menu">
+                    <a href="всетуры.html" class="nav-button">ТУРЫ</a>
+                    <a href="команда.html" class="nav-button">КОМАНДА</a>
+                    <a href="ОТЗЫВЫ.html" class="nav-button">ОТЗЫВЫ</a>
+                    <a href="Информация.htmlы" class="nav-button">КОНТАКТЫ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <div class="photo-container">
+                <img src="images/семотдых.png" alt="Семейный отдых">
+            </div>
+            <div class="text-block">
+                <div class="text-content-container">
+                    <h1 class="title">Семейный отдых</h1>
+                    <div class="comfort-text-block">
+                        <p class="description">
+                            Программа для семей с детьми. Поможем подобрать проживание для всех членов семьи. 
+                    В программе будут только те экскурсии которые подойдут всем участникам от 4 лет.
+                        </p>
+                        <div class="details-container">
+                            <div class="details-column">
+                                Сложность:<br>
+                                Легкий<br><br>
+                                Возраст:<br>
+                                Дети 4+
+                            </div>
+                            <div class="details-column">
+                                Стоимость<br>
+                                от 550 000 р
+                                <a href="фио.html" class="book-button">Забронировать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+   <!-- Карусель после основного контента -->
+<div class="carousel-section">
+    <div class="container">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="images/сем1.jpg" alt="Фото тура 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/сем2.jpg" alt="Фото тура 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/сем3.jpg" alt="Фото тура 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/сем4.jpg" alt="Фото тура 4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/сем5.jpg" alt="Фото тура 5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/сем6.jpg" alt="Фото тура 6">
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/сем7.jpg" alt="Фото тура 7">
+                </div>
+            </div>
+            <button class="carousel-btn prev-btn">&lt;</button>
+            <button class="carousel-btn next-btn">&gt;</button>
+        </div>
+    </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html">
+                        <img src="images/лого 2.png" alt="Логотип">
+                    </a>
+                </div>
+                <div class="footer-contacts">
+                    <h3 class="contacts-title">8-911-962-93-52<br>8-911-964-93-57</h3>
+                    <p class="contacts-subtitle">Россия, 190068, г. Санкт-Петербург,<br>Вознесенский пр-т 44-46</p>
+                </div>
+                <nav class="footer-nav">
+                    <a href="всетуры.html" class="footer-nav-link">ТУРЫ</a>
+                    <a href="ОТЗЫВЫ.html" class="footer-nav-link">ОТЗЫВЫ</a>
+                    <a href="команда.html" class="footer-nav-link">КОМАНДА</a>
+                    <a href="Информация.html" class="footer-nav-link">КОНТАКТЫ</a>
+                </nav>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><img src="images/tg.png" alt="Telegram"></a>
+                    <a href="#" class="social-icon"><img src="images/vk.png" alt="VK"></a>
+                    <a href="#" class="social-icon"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+            const nextBtn = document.querySelector('.next-btn');
+            const prevBtn = document.querySelector('.prev-btn');
+            
+            // Рассчитываем ширину одного слайда
+            const slide = slides[0];
+            let slideWidth = slide.offsetWidth;
+            let gap = parseInt(window.getComputedStyle(slide).marginRight) || 30;
+            const totalSlideWidth = slideWidth + gap;
+            
+            // Количество одновременно видимых слайдов
+            const visibleSlides = 5;
+            let currentIndex = 0;
+            
+            // Функция обновления позиции карусели
+            function updateCarousel() {
+                track.style.transform = `translateX(-${currentIndex * totalSlideWidth}px)`;
+                
+                // Скрываем/показываем кнопки навигации
+                prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+                nextBtn.style.display = currentIndex >= slides.length - visibleSlides ? 'none' : 'block';
+            }
+            
+            // Обработчик кнопки "Вперед"
+            nextBtn.addEventListener('click', function() {
+                if (currentIndex < slides.length - visibleSlides) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+            
+            // Обработчик кнопки "Назад"
+            prevBtn.addEventListener('click', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+            
+            // Инициализация карусели
+            updateCarousel();
+            
+            // Обработчик ресайза окна
+            window.addEventListener('resize', function() {
+                const newSlideWidth = slides[0].offsetWidth;
+                const newGap = parseInt(window.getComputedStyle(slides[0]).marginRight) || 30;
+                if (Math.abs(newSlideWidth - slideWidth) > 5 || newGap !== gap) {
+                    slideWidth = newSlideWidth;
+                    gap = newGap;
+                    updateCarousel();
+                }
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        burger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Закрывать меню при клике на ссылку
+        const navLinks = document.querySelectorAll('.nav-button');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                burger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    });
+</script>
+
+<script>
+    // Адаптация карусели при изменении размера окна
+    function updateCarouselSlides() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const track = document.querySelector('.carousel-track');
+        const windowWidth = window.innerWidth;
+        
+        if (windowWidth <= 480) {
+            slides.forEach(slide => {
+                slide.style.flex = '0 0 100%';
+            });
+        } else if (windowWidth <= 768) {
+            slides.forEach(slide => {
+                slide.style.flex = '0 0 calc(50% - 15px)';
+            });
+        } else if (windowWidth <= 992) {
+            slides.forEach(slide => {
+                slide.style.flex = '0 0 calc(33.333% - 20px)';
+            });
+        } else {
+            slides.forEach(slide => {
+                slide.style.flex = '0 0 calc(20% - 24px)';
+            });
+        }
+        
+        // Пересчитываем позицию карусели после изменения размеров
+        const carouselScript = document.querySelector('script[src*="акт.js"]');
+        if (carouselScript) {
+            carouselScript.remove();
+            const newScript = document.createElement('script');
+            newScript.src = 'акт.js';
+            document.body.appendChild(newScript);
+        }
+    }
+
+    // Вызываем при загрузке и изменении размера окна
+    window.addEventListener('load', updateCarouselSlides);
+    window.addEventListener('resize', updateCarouselSlides);
+</script>
+
+</body>
+</html>

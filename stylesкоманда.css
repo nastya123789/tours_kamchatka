@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inria Serif', serif;
+    background-color: #CACACA;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+
+}
+
+.logo img {
+    width: 217x;
+    height: 58px;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    
+    gap: 80px;
+    
+}
+
+.nav-button {
+    color: #00304E;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    transition: color 0.3s ease;    
+}
+
+.nav-button:hover {
+    color:  #CACACA;
+    background-color: #00304E;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #00304E; 
+}
+
+.card {
+    background-color: #B9B9B9;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    padding: 0 20px; 
+    box-sizing: border-box;
+    height: auto; 
+    overflow: hidden; 
+    border-radius: 12px;
+
+}
+
+.card img {
+    width: 100%;
+    max-width: 316px;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin-top: 20px;
+    border-radius: 12px 12px 12px 12px;
+}
+
+.card-content {
+    padding: 25px 2px;
+    width: 100%; 
+    box-sizing: border-box; 
+    text-align: center; 
+}
+
+.card h3 {
+    color: #00304E;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0 20px 0; 
+    padding: 0 8px;
+}
+
+.card p {
+    color: #00304E;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 15px auto 0;
+    text-align: center; 
+    width: calc(100% - 4px); 
+    max-width: 100%; 
+    word-wrap: break-word; 
+    padding: 0 2px; 
+}
+
+.section {
+
+    padding: 40px;
+    background-color: #CACACA;
+    gap: 60px;
+}
+
+.section .container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.footer {
+    background-color: #00304E;
+    padding: 60px 0;
+    width: 100%; /* Добавляем */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 65px;
+}
+
+.footer-logo img {
+    width: 243px;
+    height: 70px;
+    object-fit: contain;
+    
+    
+}
+
+.footer-contacts {
+    width: 287px;
+    height: 113px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CACACA;
+    width: 173px;
+    height: 58px;
+    margin-bottom: 17px;
+}
+
+.contacts-subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: #CACACA;
+    width: 287px;
+    height: 38px;
+}
+
+.footer-nav {
+    width: 425px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    column-gap: 60px;
+}
+
+.footer-nav-link {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CACACA;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-social {
+    width: 223px;
+    height: 48px;
+    display: flex;
+    gap: 41px;
+}
+
+.social-icon img {
+    width: 47px;
+    height: 47px;
+}
+
+
+/* Скрываем навигацию и показываем бургер на экранах ≤ 1055px */
+@media (max-width: 1055px) {
+    .header-container {
+        padding: 25px 20px;
+        position: relative;
+    }
+
+    .logo img {
+        width: 180px;
+        height: auto;
+    }
+
+    .nav-menu {
+        display: none; /* Скрываем обычное меню */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #00304E;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 100;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        right: 0;
+        display: flex; /* Показываем при активации */
+    }
+
+    .nav-button {
+        font-size: 20px;
+        color: #CACACA;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-button:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    /* Стили бургера */
+    .burger {
+        display: block; /* Показываем бургер */
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 101;
+        cursor: pointer;
+    }
+
+    .burger span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #00304E;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .burger span:nth-child(1) {
+        top: 0;
+    }
+
+    .burger span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger span:nth-child(3) {
+        bottom: 0;
+    }
+
+    .burger.active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        background: #CACACA;
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+        background: #CACACA;
+    }
+}
+
+/* Скрываем бургер на экранах ≥ 1056px */
+@media (min-width: 1056px) {
+    .burger {
+        display: none !important;
+    }
+
+    .nav-menu {
+        display: flex !important; /* Всегда показываем обычное меню */
+    }
+}
+
+
+
+
+                       /* Добавьте это в конец файла stylesкоманда.css */
+
+            /* Адаптация КАРТОЧЕК для экранов ≤ 1174px */
+@media (max-width: 1174px) {
+    .section .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+    }
+    
+    .card {
+        max-width: calc(50% - 20px); /* 2 карточки в ряд с отступом */
+        margin: 0;
+    }
+}
+
+             /* Адаптация КАРТОЧЕК для экранов ≤ 768px */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%; /* 1 карточка в ряд */
+    }
+}
+
+/* Сохраняем текущие настройки для полного экрана */
+@media (min-width: 1175px) {
+    .section .container {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    
+    .card {
+        max-width: 350px;
+    }
+}
+
+
+/* Добавьте это в конец файла stylesкоманда.css */
+
+/* Адаптация ФУТЕР для экранов ≤ 1055px */
+@media (max-width: 1220px) {
+    .footer {
+        padding: 40px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .footer-logo,
+    .footer-contacts,
+    .footer-nav,
+    .footer-social {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        order: 1;
+    }
+    
+    .footer-nav {
+        order: 2;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-contacts {
+        order: 3;
+    }
+    
+    .footer-social {
+        order: 4;
+        justify-content: center;
+    }
+    
+    .contacts-title,
+    .contacts-subtitle {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .footer-nav-link {
+        font-size: 20px;
+        white-space: normal;
+    }
+}
+
+/* ТЕЛЕФОНЫ Дополнительная адаптация для очень маленьких экранов ≤ 480px */
+@media (max-width: 480px) {
+
+ /* Адаптация секций с карточками */
+ .section {
+    padding: 20px 15px;
+    gap: 30px;
+}
+
+.card {
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+.card img {
+    width: 100%;
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    max-width: 100%; /* Убираем фиксированный max-width */
+    margin-top: 15px;
+    border-radius: 12px;
+}
+
+.card-content {
+    padding: 20px 0;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin: 5px 0 15px 0;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Адаптация хедера */
+.header-container {
+    padding: 15px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Адаптация бургер-меню */
+.burger {
+    width: 25px;
+    height: 18px;
+}
+
+.burger span {
+    height: 2px;
+}
+
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-logo img {
+        width: 200px;
+        height: auto;
+    }
+    
+    .footer-nav-link {
+        font-size: 18px;
+    }
+    
+    .social-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}

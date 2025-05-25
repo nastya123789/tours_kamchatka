@@ -1,0 +1,644 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inria Serif', serif;
+    background-color: #CACACA;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.logo {
+
+}
+
+.logo img {
+    width: 217x;
+    height: 58px;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    
+    gap: 80px;
+    
+}
+
+.nav-button {
+    color: #00304E;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    transition: color 0.3s ease;    
+}
+
+.nav-button:hover {
+    color:  #CACACA;
+    background-color: #00304E;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #00304E; 
+}
+
+
+.reviews-section {
+    padding: 50px 0;
+    background-color: #CACACA;
+}
+
+.reviews-container {
+    display:flex;
+    gap: 40px;
+    padding: 0 65px;
+    align-items: stretch; /* Добавлено для выравнивания высоты колонок */
+}
+
+.reviews-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.review-card {
+    background-color: #B9B9B9;
+    border-radius: 70px;
+    padding: 36px; /* Отступы со всех сторон 36px */
+    min-height: 200px;
+    text-align: center;
+    width: 720px; /* Фиксированная ширина */
+    height: 450px; /* Фиксированная высота */
+}
+
+
+.review-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-family: 'Inria Serif', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #00304E;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: left;
+    padding-left: 24px; /* 60px - 36px общего отступа = 24px */
+    margin-left: 0;
+}
+
+.review-text {
+    font-family: 'Inria Serif', serif;
+    font-size: 23px;
+    line-height: 1.4;
+    color: #00304E;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.review-rating {
+    font-family: 'Inria Serif', serif;
+    font-size: 24px;
+    color: #FFCC00; /* Золотой цвет для звезд */
+    text-align: left;
+    padding-left: 24px;
+    margin-top: -10px; /* Поднимаем ближе к имени */
+    margin-bottom: 15px;
+    letter-spacing: 2px; /* Разрежаем звезды */
+}
+
+
+.photos-column {
+    flex: 1;
+    display: flex;
+    max-width: 880px; /* Соответствует ширине отзывов */
+    padding: 0; /* Убрали внутренние отступы */
+    margin: 0; /* Убрали внешние отступы */
+    height: 1890px; 
+    position: relative;
+    
+}
+
+.photo-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 0; /* Фикс для переполнения */
+    padding: 0; /* Убрали внутренние отступы */
+    height: 100%; /* Занимаем всю высоту */
+    justify-content: space-between; /* Равномерное распределение по высоте */
+    gap: 0;
+
+}
+
+
+/* Для первой колонки фото */
+.photo-group:first-child {
+    align-items: flex-start; /* Основное выравнивание */
+    margin-right: auto; /* Прижимаем всю колонку к правому краю */
+    z-index: 2; /* Выше второй колонки */
+    margin-right: -25px; /* Частично перекрывает вторую колонку */
+   
+   
+}
+
+/* Для правой колонки */
+.photo-group:last-child {
+    align-items: flex-end; /* Основное выравнивание */
+    margin-left: auto; /* Прижимаем всю колонку к правому краю */
+    z-index: 1; /* Ниже первой колонки */
+}
+
+
+
+.photo {
+    flex: 1;
+    min-height: 0;
+    object-fit: contain; /* Сохраняем пропорции */
+    margin: 0;
+
+    height: 0; /* Важно для равномерного распределения */
+  
+}
+
+
+
+
+/* Индивидуальные размеры для фото */
+.photo-group img[src="images/фото 1.png"],
+.photo-group img[src="images/фото 3.png"],
+.photo-group img[src="images/фото 7.png"],
+.photo-group img[src="images/фото 9.png"] {
+    
+    width: 300px !important;
+    height: auto;
+}
+
+
+
+
+.photo-group img[src="images/фото 8.png"] {
+ 
+    width: 230px !important;
+    height: auto;
+}
+
+.photo-group img[src="images/фото 6.png"] {
+    width: 215px !important;
+    height: auto;
+}
+
+.photo-group img[src="images/фото 2.png"] {
+    width: 230px !important;
+    height: 360px;
+}
+
+.photo-group img[src="images/фото 4.png"] {
+    
+    width: 230px;
+    height: 330px;
+
+}
+
+.photo-group img[src="images/фото 5.png"] {
+    width: 255px !important;
+    height: auto;
+}
+
+.photo-group img[src="images/фото 10.png"] {
+    width: 265px !important;
+    height: auto;
+}
+
+
+
+
+.footer {
+    background-color: #00304E;
+    padding: 60px 0;
+    width: 100%; /* Добавляем */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 65px;
+}
+
+.footer-logo img {
+    width: 243px;
+    height: 70px;
+    object-fit: contain;
+    
+    
+}
+
+.footer-contacts {
+    width: 287px;
+    height: 113px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-title {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CACACA;
+    width: 173px;
+    height: 58px;
+    margin-bottom: 17px;
+}
+
+.contacts-subtitle {
+    font-weight: bold;
+    font-size: 16px;
+    color: #CACACA;
+    width: 287px;
+    height: 38px;
+}
+
+.footer-nav {
+    width: 425px;
+    height: 120px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    column-gap: 60px;
+}
+
+.footer-nav-link {
+    font-weight: bold;
+    font-size: 24px;
+    color: #CACACA;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.footer-social {
+    width: 223px;
+    height: 48px;
+    display: flex;
+    gap: 41px;
+}
+
+.social-icon img {
+    width: 47px;
+    height: 47px;
+}
+
+
+
+
+/* Скрываем навигацию и показываем бургер на экранах ≤ 1055px */
+@media (max-width: 1055px) {
+    .header-container {
+        padding: 25px 20px;
+        position: relative;
+    }
+
+    .logo img {
+        width: 180px;
+        height: auto;
+    }
+
+    .nav-menu {
+        display: none; /* Скрываем обычное меню */
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #00304E;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.3s ease;
+        z-index: 100;
+        padding: 20px;
+    }
+
+    .nav-menu.active {
+        right: 0;
+        display: flex; /* Показываем при активации */
+    }
+
+    .nav-button {
+        font-size: 20px;
+        color: #CACACA;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-button:hover {
+        background-color: transparent;
+        text-decoration: underline;
+    }
+
+    /* Стили бургера */
+    .burger {
+        display: block; /* Показываем бургер */
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 101;
+        cursor: pointer;
+    }
+
+    .burger span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #00304E;
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    .burger span:nth-child(1) {
+        top: 0;
+    }
+
+    .burger span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .burger span:nth-child(3) {
+        bottom: 0;
+    }
+
+    .burger.active span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        background: #CACACA;
+    }
+
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+        background: #CACACA;
+    }
+}
+
+/* Скрываем бургер на экранах ≥ 1056px */
+@media (min-width: 1056px) {
+    .burger {
+        display: none !important;
+    }
+
+    .nav-menu {
+        display: flex !important; /* Всегда показываем обычное меню */
+    }
+}
+
+
+
+/* Адаптация ФУТЕР для экранов ≤ 1055px */
+@media (max-width: 1220px) {
+    .footer {
+        padding: 40px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        padding: 0 20px;
+    }
+    
+    .footer-logo,
+    .footer-contacts,
+    .footer-nav,
+    .footer-social {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .footer-logo {
+        order: 1;
+    }
+    
+    .footer-nav {
+        order: 2;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-contacts {
+        order: 3;
+    }
+    
+    .footer-social {
+        order: 4;
+        justify-content: center;
+    }
+    
+    .contacts-title,
+    .contacts-subtitle {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+    
+    .footer-nav-link {
+        font-size: 20px;
+        white-space: normal;
+    }
+}
+
+
+/* ТЕЛЕФОНЫ Дополнительная адаптация для очень маленьких экранов ≤ 480px */
+@media (max-width: 480px) {
+    /* Адаптация хедера */
+.header-container {
+    padding: 15px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+/* Адаптация бургер-меню */
+.burger {
+    width: 25px;
+    height: 18px;
+}
+
+.burger span {
+    height: 2px;
+}
+
+    .footer {
+        padding: 30px 0;
+    }
+    
+    .footer-content {
+        gap: 30px;
+    }
+    
+    .footer-logo img {
+        width: 200px;
+        height: auto;
+    }
+    
+    .footer-nav-link {
+        font-size: 18px;
+    }
+    
+    .social-icon img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+
+
+/* Основные изменения для адаптации */
+@media (max-width: 1220px) {
+    .reviews-container {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 30px;
+    }
+    
+    .reviews-column {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .review-card {
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto;
+        padding: 25px;
+        border-radius: 40px;
+    }
+    
+    .photos-column {
+        width: 100%;
+        max-width: 100%;
+        height: auto !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .photo-group {
+        width: 48% !important;
+        height: auto !important;
+        gap: 15px;
+    }
+    
+    .photo {
+        height: auto !important;
+        margin-bottom: 15px;
+    }
+    
+    /* Убираем индивидуальные размеры фото на средних экранах */
+    .photo-group img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 30px 0;
+    }
+    
+    .review-card {
+        padding: 20px;
+        border-radius: 30px;
+    }
+    
+    .review-author {
+        font-size: 24px;
+        padding-left: 15px;
+    }
+    
+    .review-text {
+        font-size: 18px;
+    }
+    
+    .review-rating {
+        font-size: 20px;
+        padding-left: 15px;
+    }
+    
+    .photos-column {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .photo-group {
+        width: 100% !important;
+        max-width: 400px;
+    }
+    
+    .photo-group:first-child,
+    .photo-group:last-child {
+        margin: 0;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-card {
+        padding: 15px;
+        border-radius: 20px;
+    }
+    
+    .review-author {
+        font-size: 20px;
+    }
+    
+    .review-text {
+        font-size: 16px;
+    }
+    
+    .review-rating {
+        font-size: 18px;
+    }
+    
+    .photo-group {
+        max-width: 300px;
+    }
+}
+
+
