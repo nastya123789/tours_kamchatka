@@ -315,6 +315,24 @@ body {
     height: 47px;
 }
 
+.phone-link {
+    color: #CACACA !important;       /* Цвет как у обычного текста */
+    text-decoration: none !important; /* Убираем подчеркивание */
+    cursor: pointer;                 /* Курсор в виде руки (опционально) */
+}
+
+/* Убираем синюю подсветку при нажатии на iOS */
+.phone-link:active {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Для десктопов: убрать стандартные стили ссылок */
+.phone-link:hover,
+.phone-link:focus {
+    color: #CACACA !important;
+    text-decoration: none !important;
+}
+
 /* Скрываем навигацию и показываем бургер на экранах ≤ 1055px */
 @media (max-width: 1055px) {
     .header-container {
